@@ -1,10 +1,7 @@
 package tests;
 
 import helpers.BaseTest;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Severity;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -66,6 +63,24 @@ public class StudentsRegistrationFormTests extends BaseTest {
         test = new StudentRegistrationScenario( );
         test.unSuccessStudentRegisterScenario(student, fieldName);
     }
+
+    @Feature("Negative tests")
+    @Story("Incomplete form")
+    @Test
+    @Tag("negative")
+    @Severity(MINOR)
+    @AllureId("2015")
+    @DisplayName("Test 04-M: Check unsuccessful Student form registration for filled only `Mobile Number`")
+    public void test04manualStudentRegForm( ) {
+        String fieldName = "firstName";
+        Student student = new Student(true);
+        student.setFirstName(null);
+        student.setLastName(null);
+        test = new StudentRegistrationScenario( );
+        test.unSuccessStudentRegisterScenario(student, fieldName);
+    }
+
+
 
     @Feature("Negative tests")
     @Story("Incomplete form")
