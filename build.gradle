@@ -8,8 +8,8 @@ group 'qa.guru.4_13_testops'
 version '1.0-SNAPSHOT'
 
 repositories {
-    mavenCentral()
     maven {url = "https://dl.bintray.com/qameta/maven-unstable/"}
+    mavenCentral()
 }
 
 def allureVersion = "2.13.8",
