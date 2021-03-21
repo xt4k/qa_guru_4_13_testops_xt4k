@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pojo.Student;
 
-import static io.qameta.allure.SeverityLevel.BLOCKER;
+import static io.qameta.allure.SeverityLevel.*;
 
 @Epic("Student registration form tests")
 public class StudentsRegistrationFormTests extends BaseTest {
@@ -57,7 +57,7 @@ public class StudentsRegistrationFormTests extends BaseTest {
     @Story("Incomplete form")
     @Test
     @Tag("negative")
-    @Severity(BLOCKER)
+    @Severity(MINOR)
     @DisplayName("Test 04: Check unsuccessful Student form registration for not filled required field `First Name`.")
     public void test04studentRegForm( ) {
         String fieldName = "firstName";
@@ -71,7 +71,7 @@ public class StudentsRegistrationFormTests extends BaseTest {
     @Story("Incomplete form")
     @Test
     @Tag("negative")
-    @Severity(BLOCKER)
+    @Severity(NORMAL)
     @DisplayName("Test 05: Check unsuccessful Student form registration for not filled required field `Last Name`.")
     public void test05studentRegForm( ) {
         String fieldName = "lastName";
@@ -85,7 +85,7 @@ public class StudentsRegistrationFormTests extends BaseTest {
     @Story("Incomplete form")
     @Test
     @Tag("negative")
-    @Severity(BLOCKER)
+    @Severity(TRIVIAL)
     @DisplayName("Test 06: Check unsuccessful Student form registration for not filled required field `Mobile Number`.")
     public void test06studentRegForm( ) {
         String fieldName = "userNumber";

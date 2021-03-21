@@ -2,16 +2,21 @@ package tests;
 
 import config.WebConfig;
 import helpers.BaseTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.aeonbits.owner.ConfigFactory;
 import po.BasePageObject;
 import pojo.Student;
 
+@Epic("QA_guru")
+@Feature("number 4")
 public class StudentRegistrationScenario extends BaseTest {
     BasePageObject po = new BasePageObject( );
     final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
-    @Step("Success student form register scenario")
+    @Step("student form register scenario")
     void successStudentRegisterScenario(Student student) {
         po.openForm(config.getBaseUrl())
                 .validateFormOpen( )
@@ -19,6 +24,7 @@ public class StudentRegistrationScenario extends BaseTest {
                 .submitForm( );
         po.registeredFormVerification(student);
     }
+
 
     @Step("Success student form register scenario")
     void unSuccessStudentRegisterScenario(Student student, String field) {
