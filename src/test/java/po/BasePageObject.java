@@ -71,7 +71,8 @@ public class BasePageObject {
     }
 
     @Step("Validate that required field in Student registration form is empty")
-    public void emptyField(String field) {
+    public BasePageObject emptyField(String field) {
         $(("#" + field)).shouldBe(empty);
+        return this;
     }
 }

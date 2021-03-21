@@ -73,11 +73,12 @@ public class StudentsRegistrationFormTests extends BaseTest {
     @DisplayName("Test 04-M: Check unsuccessful Student form registration for filled only `Mobile Number`")
     public void test04manualStudentRegForm( ) {
         String fieldName = "firstName";
+        String fieldName2 = "lastName";
         Student student = new Student(true);
         student.setFirstName(null);
         student.setLastName(null);
         test = new StudentRegistrationScenario( );
-        test.unSuccessStudentRegisterScenario(student, fieldName);
+        test.unSuccessStudentRegisterScenario2(student, fieldName,fieldName2);
     }
 
 

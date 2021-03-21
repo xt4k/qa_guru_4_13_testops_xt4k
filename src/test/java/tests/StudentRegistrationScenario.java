@@ -36,6 +36,17 @@ public class StudentRegistrationScenario extends BaseTest {
                 .emptyField(field);
     }
 
+    @Step("Success student form register scenario")
+    void unSuccessStudentRegisterScenario2(Student student, String field,String field2) {
+        po.openForm(config.getBaseUrl())
+                .validateFormOpen( )
+                .fillRegForm(student)
+                .submitForm( );
+        po.validateFormOpen( )
+                .emptyField(field)
+                .emptyField(field2);
+    }
+
     @Step("Failed scenario")
     public void failedTest( ) {
         po.openForm(config.getBaseUrl())
